@@ -20,6 +20,7 @@ module.exports = {
     url: 'https://monolithresistor.com'
   },
   plugins: [
+    'gatsby-plugin-react-helmet',
     'gatsby-plugin-typescript',
     'gatsby-plugin-typescript-checker',
     {
