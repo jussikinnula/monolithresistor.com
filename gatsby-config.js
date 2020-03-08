@@ -15,8 +15,9 @@ if (!PRISMIC_ACCESS_TOKEN) {
 
 module.exports = {
   siteMetadata: {
-    siteName: `Monolith Resistor`,
-    exampleUrl: `https://monolithresistor.com`,
+    title: 'Monolith Resistor',
+    description: 'Acid/Electro House Music from Helsinki, Finland',
+    url: 'https://monolithresistor.com'
   },
   plugins: [
     'gatsby-plugin-typescript',

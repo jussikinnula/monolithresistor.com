@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { down, only, up } from 'styled-breakpoints';
-import theme, { Theme } from '../theme';
+import { Theme } from '../theme';
 
 const Wrapper = styled.div<{ theme: Theme }>`
   width: 100%;

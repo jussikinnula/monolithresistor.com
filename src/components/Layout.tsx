@@ -1,12 +1,13 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
+import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import styledNormalize from 'styled-normalize';
-import { down, only, up } from 'styled-breakpoints';
-import theme, { Theme } from '../theme';
+import { only, up } from 'styled-breakpoints';
+import theme from '../theme';
+import { PrismicKeyText, PrismicImage } from '../prismic';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
-import Wrapper from '../components/Wrapper';
+import SEO from '../components/SEO';
 
 const GlobalStyle = createGlobalStyle`
   ${styledNormalize}
@@ -67,15 +68,22 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-export const Layout: React.FunctionComponent = props => (
+interface LayoutProps {
+  title?: PrismicKeyText;
+  description?: PrismicKeyText;
+  image?: PrismicImage;
+}
+
+const Layout: React.FunctionComponent<LayoutProps> = ({ title, description, image, children }) => (
   <>
     <Helmet>
       <link href="https://fonts.googleapis.com/css?family=Francois+One|Ubuntu+Condensed|Ubuntu+Mono&amp;display=swap" rel="stylesheet" />
     </Helmet>
+    <SEO title={title} description={description} image={image} />
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <Header theme={theme} />
-      {props.children}
+      {children}
       <Footer theme={theme} />
     </ThemeProvider>
   </>

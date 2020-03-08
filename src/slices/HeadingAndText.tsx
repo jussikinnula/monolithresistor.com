@@ -2,7 +2,7 @@ import { RichText } from 'prismic-reactjs';
 import React from 'react';
 import styled from 'styled-components';
 import { oc } from 'ts-optchain';
-import { PrismicDocumentBase, PrismicSlice, PrismicKeyText, PrismicRichText } from '../prismic';
+import { PrismicSlice, PrismicKeyText, PrismicRichText } from '../prismic';
 import Wrapper from '../components/Wrapper';
 
 const Heading = styled.h2`

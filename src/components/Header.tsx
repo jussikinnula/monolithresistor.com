@@ -1,6 +1,6 @@
 import React from 'react';
-import styled, { ThemeProvider } from 'styled-components';
-import theme, { Theme } from '../theme';
+import styled from 'styled-components';
+import { Theme } from '../theme';
 import Logo from '../assets/logo.svg';
 import Wrapper from '../components/Wrapper';
 import Balls from './Balls';

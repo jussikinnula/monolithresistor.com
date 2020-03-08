@@ -1,13 +1,15 @@
 import { graphql } from 'gatsby';
-import { PrismicDocumentBase, PrismicKeyText } from '../prismic';
+import { PrismicDocumentBase, PrismicKeyText, PrismicImage } from '../prismic';
 import { HeadingAndTextSlice } from '../slices/HeadingAndText';
-import { HeroSlice } from '../slices/Hero';
 import { IframeSlice } from '../slices/Iframe';
 
-export type PageSlice = HeadingAndTextSlice | HeroSlice | IframeSlice;
+export type PageSlice = HeadingAndTextSlice | IframeSlice;
 
 export interface PageDocument extends PrismicDocumentBase {
   title: PrismicKeyText;
+  title_style: 'Light' | 'Dark';
+  description?: PrismicKeyText;
+  image?: PrismicImage;
   body: PageSlice[];
 }
 
@@ -21,6 +23,9 @@ export const PageFragment = graphql`
       uid
     }
     title
+    title_style
+    description
+    image
     body {
       __typename
       ... on PRISMIC_PageBodyHeading_and_text {
@@ -28,14 +33,6 @@ export const PageFragment = graphql`
         primary {
           heading
           text
-        }
-      }
-      ... on PRISMIC_PageBodyHero {
-        type
-        primary {
-          hero_title
-          hero_title_style
-          hero_image
         }
       }
       ... on PRISMIC_PageBodyIframe {

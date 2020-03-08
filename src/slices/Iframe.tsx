@@ -1,10 +1,8 @@
 import React from 'react';
-import Helmet from 'react-helmet';
 import styled from 'styled-components';
-import { down, only, up } from 'styled-breakpoints';
 import { oc } from 'ts-optchain';
-import theme, { Theme } from '../theme';
-import { PrismicDocumentBase, PrismicImage, PrismicSlice, PrismicKeyText, PrismicWebLink } from '../prismic';
+import { Theme } from '../theme';
+import { PrismicSlice, PrismicKeyText, PrismicWebLink } from '../prismic';
 import Wrapper from '../components/Wrapper';
 
 interface IframeNonRepeatable {

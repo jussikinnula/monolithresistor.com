@@ -1,9 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { down, only, up } from 'styled-breakpoints';
-import { oc } from 'ts-optchain';
-import theme, { Theme } from '../theme';
-import { PrismicDocumentBase, PrismicImage, PrismicSlice, PrismicKeyText } from '../prismic';
+import { Theme } from '../theme';
+import { PrismicImage, PrismicKeyText } from '../prismic';
 
 const Image = styled.div<{ image: PrismicImage }>`
   position: relative;
@@ -53,7 +52,7 @@ const Title = styled.div<{ theme: Theme }>`
   }
 
   ${up('lg')} {
-    font-size: 10vw;
+    font-size: 8vw;
     right: 1vw;
     bottom: 1vw;
   }
@@ -86,29 +85,18 @@ const DarkTitle = styled(Title)`
   }
 `;
 
-interface HeroNonRepeatable {
-  hero_title: PrismicKeyText;
-  hero_title_style: 'Light' | 'Dark';
-  hero_image: PrismicImage;
+interface HeroProps {
+  title: PrismicKeyText;
+  titleStyle: 'Light' | 'Dark';
+  image: PrismicImage;
+  theme: Theme;
 }
 
-export type HeroSlice = PrismicSlice<HeroNonRepeatable, null, 'hero'>;
-
-const Hero: React.FunctionComponent<HeroNonRepeatable> = props => {
-  const title = oc(props).hero_title();
-  const titleStyle = oc(props).hero_title_style();
-  const image = oc(props).hero_image();
-
-  if (!image) {
-    throw new Error('No image');
-  }
-
-  return (
-    <Image image={image}>
-      {title && titleStyle === 'Light' && <LightTitle>{title}</LightTitle>}
-      {title && titleStyle === 'Dark' && <DarkTitle>{title}</DarkTitle>}
-    </Image>
-  )
-};
+const Hero: React.FunctionComponent<HeroProps> = ({ title, titleStyle, image }) => (
+  <Image image={image}>
+    {title && titleStyle === 'Light' && <LightTitle>{title}</LightTitle>}
+    {title && titleStyle === 'Dark' && <DarkTitle>{title}</DarkTitle>}
+  </Image>
+);
 
 export default Hero;

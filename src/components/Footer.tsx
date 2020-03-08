@@ -1,8 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { down, only, up } from 'styled-breakpoints';
-import theme, { Theme } from '../theme';
-import Logo from '../assets/logo.svg';
+import { Theme } from '../theme';
 import Balls from './Balls';
 import Wrapper from '../components/Wrapper';
 
