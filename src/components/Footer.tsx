@@ -4,7 +4,9 @@ import { Theme } from '../theme';
 import Balls from './Balls';
 import Wrapper from '../components/Wrapper';
 
-const Copyright = styled.div``;
+const Copyright = styled.div`
+	margin-bottom: 25px;
+`;
 
 interface FooterProps {
   theme: Theme;
