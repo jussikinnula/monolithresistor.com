@@ -32,6 +32,13 @@ export interface Theme {
     text: string;
   };
   maxWidth: string;
+  padding: {
+    xs: string;
+    sm: string;
+    md: string;
+    lg: string;
+    xl: string;
+  }
 }
 
 const theme: Theme = {
@@ -55,7 +62,14 @@ const theme: Theme = {
     heading: FRANCOIS_ONE,
     text: UBUNTU_CONDENSED
   },
-  maxWidth: '1440px'
+  maxWidth: '1440px',
+  padding: {
+    xs: '8px',
+    sm: '10px',
+    md: '14px',
+    lg: '18px',
+    xl: '25px'
+  }
 };
 
 export default theme;

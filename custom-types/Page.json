@@ -86,6 +86,19 @@
                 "config" : {
                   "label" : "Link"
                 }
+              },
+              "iframe_full_width" : {
+                "type" : "Boolean",
+                "config" : {
+                  "default_value" : false,
+                  "label" : "Full width"
+                }
+              },
+              "iframe_height" : {
+                "type" : "Number",
+                "config" : {
+                  "label" : "Height"
+                }
               }
             },
             "repeat" : { }

@@ -7,20 +7,24 @@ const Wrapper = styled.div<{ theme: Theme }>`
   max-width: ${props => props.theme.maxWidth};
   margin: 0 auto;
 
-  ${down('md')} {
-    padding: 10px;
+  ${down('xs')} {
+    padding: ${props => props.theme.padding.xs};
+  }
+
+  ${only('sm')} {
+    padding: ${props => props.theme.padding.sm};
   }
 
   ${only('md')} {
-    padding: 14px;
+    padding: ${props => props.theme.padding.md};
   }
 
   ${only('lg')} {
-    padding: 18px;
+    padding: ${props => props.theme.padding.lg};
   }
 
   ${up('lg')} {
-    padding: 25px;
+    padding: ${props => props.theme.padding.xl};
   }
 `;
 
