@@ -1,7 +1,6 @@
 import path from 'path';
 import { oc } from 'ts-optchain';
 import { PrismicNode, PrismicDocumentBase } from '../prismic';
-import { PageDocument, PageFragment } from '../fragments/PageFragment';
 import linkResolver from './linkResolver';
 
 interface PageInput {
@@ -36,7 +35,7 @@ interface QueryData {
     prismic: {
       allPages: {
         pageInfo: PageInfo;
-        edges: PrismicNode<PageDocument>[];
+        edges: PrismicNode<PrismicDocumentBase>[];
       };
     };
   };

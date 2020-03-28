@@ -8,23 +8,23 @@ const Wrapper = styled.div<{ theme: Theme }>`
   margin: 0 auto;
 
   ${down('xs')} {
-    padding: ${props => props.theme.padding.xs};
+    padding: ${props => props.theme.padding.xs}px;
   }
 
   ${only('sm')} {
-    padding: ${props => props.theme.padding.sm};
+    padding: ${props => props.theme.padding.sm}px;
   }
 
   ${only('md')} {
-    padding: ${props => props.theme.padding.md};
+    padding: ${props => props.theme.padding.md}px;
   }
 
   ${only('lg')} {
-    padding: ${props => props.theme.padding.lg};
+    padding: ${props => props.theme.padding.lg}px;
   }
 
   ${up('lg')} {
-    padding: ${props => props.theme.padding.xl};
+    padding: ${props => props.theme.padding.xl}px;
   }
 `;
 

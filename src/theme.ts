@@ -33,11 +33,11 @@ export interface Theme {
   };
   maxWidth: string;
   padding: {
-    xs: string;
-    sm: string;
-    md: string;
-    lg: string;
-    xl: string;
+    xs: number;
+    sm: number;
+    md: number;
+    lg: number;
+    xl: number;
   }
 }
 
@@ -64,11 +64,11 @@ const theme: Theme = {
   },
   maxWidth: '1440px',
   padding: {
-    xs: '8px',
-    sm: '10px',
-    md: '14px',
-    lg: '18px',
-    xl: '25px'
+    xs: 8,
+    sm: 10,
+    md: 14,
+    lg: 18,
+    xl: 25
   }
 };
 
