@@ -17,7 +17,7 @@
     "start": "gatsby serve",
     "preserve:dev": "npm run build:dev",
     "serve:dev": "dotenv gatsby serve",
-    "preinstall": "./node_modules/.bin/npm-force-resolutions",
+    "preinstall": "node ./node_modules/npm-force-resolutions/index.js",
     "postinstall": "npm run remove-styled-components-stupid-dependency",
     "lint": "tslint -c tslint.json \"src/**/*.{ts,tsx}\""
   },
