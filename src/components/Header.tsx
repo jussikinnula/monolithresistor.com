@@ -20,7 +20,7 @@ interface HeaderProps {
   theme: Theme;
 }
 
-const Header: React.FunctionComponent<HeaderProps> = props => (
+const Header: React.FunctionComponent<HeaderProps> = (props) => (
   <OuterWrapper>
     <Wrapper>
       <StyledLogo />

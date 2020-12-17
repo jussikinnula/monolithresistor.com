@@ -1,7 +1,6 @@
 import React from 'react';
 import { down, only, up } from 'styled-breakpoints';
 import styled from 'styled-components';
-import { oc } from 'ts-optchain';
 import Wrapper from '../components/Wrapper';
 import useWindowDimensions from '../hooks/useWindowDimensions';
 import { PrismicSlice, PrismicKeyText, PrismicWebLink } from '../prismic';
@@ -67,12 +66,14 @@ interface IframeNonRepeatable {
 
 export type IframeSlice = PrismicSlice<IframeNonRepeatable, null, 'iframe'>;
 
-const Iframe: React.FunctionComponent<IframeNonRepeatable> = props => {
+const Iframe: React.FunctionComponent<IframeNonRepeatable> = (props) => {
   const { height, width } = useWindowDimensions();
-  const title = oc(props).iframe_title();
-  const link = oc(props).iframe_link();
-  const fullWidth = oc(props).iframe_full_width();
-  const iframeHeight = oc(props).iframe_height(250);
+  const {
+    iframe_title: title,
+    iframe_link: link,
+    iframe_full_width: fullWidth,
+    iframe_height: iframeHeight = 250,
+  } = props;
 
   if (!link) {
     throw new Error('No link');

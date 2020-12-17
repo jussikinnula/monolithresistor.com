@@ -12,7 +12,7 @@ interface FooterProps {
   theme: Theme;
 }
 
-const Footer: React.FunctionComponent<FooterProps> = props => (
+const Footer: React.FunctionComponent<FooterProps> = (props) => (
   <>
     <Balls color={props.theme.colors.main} />
     <Wrapper>

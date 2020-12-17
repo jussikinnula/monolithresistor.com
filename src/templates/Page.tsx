@@ -1,6 +1,5 @@
 import { graphql } from 'gatsby';
 import React from 'react';
-import { oc } from 'ts-optchain';
 import Layout from '../components/Layout';
 import { PrismicDocumentBase, PrismicDocumentByUid, PrismicKeyText, PrismicImage } from '../prismic';
 import theme from '../theme';
@@ -69,19 +68,23 @@ interface PageProps {
   data: PrismicDocumentByUid<{ page: PageDocument }>
 }
 
-const Page: QueryComponent<PageProps> = props => {
-  const page = oc(props).data.prismic.page();
-  const title = oc(page).title();
-  const titleStyle = oc(page).title_style();
-  const description = oc(page).description();
-  const image = oc(page).image();
-  const slices = oc(page).body();
-
-  const data = { title, description, image };
+const Page: QueryComponent<PageProps> = (props) => {
+  const {
+    body: slices,
+    description,
+    image,
+    title,
+    title_style: titleStyle,
+  } = props.data.prismic.page;
 
   return (
-    <Layout {...data}>
-      <Hero theme={theme} titleStyle={titleStyle} {...data} />
+    <Layout title={title} description={description}>
+      <Hero
+        image={image}
+        theme={theme}
+        title={title}
+        titleStyle={titleStyle}
+      />
       <SliceZone slices={slices} />
     </Layout>
   );
